@@ -8,11 +8,12 @@ const corsOptions = {
   credentials: true,
   optionSuccessStatus: 200,
 };
-app.use(cors(corsOptions));
 
 const express = require("express");
 const app = express();
+
 app.use(express.json());
+app.use(cors(corsOptions));
 
 const createBookData = async (newBook) => {
   try {
